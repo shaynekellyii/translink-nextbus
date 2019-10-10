@@ -1,0 +1,32 @@
+query stop_query($stop_id: Int!) {
+    stop(id: $stop_id) {
+        num
+        name
+        bayNum
+        city
+        onStreet
+        atStreet
+        lat
+        lon
+        isAccessible
+        distance
+        routes
+        estimate {
+        routes {
+            routeNum
+            routeName
+            direction
+            schedules {
+            pattern
+            destination
+            expectedLeaveTime
+            expectedCountdown
+            scheduleStatus
+            cancelledTrip
+            cancelledStop
+            lastUpdate
+            }
+        }
+        }
+    }
+}
